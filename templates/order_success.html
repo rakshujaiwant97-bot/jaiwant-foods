@@ -21,6 +21,34 @@
         rel="stylesheet"
         href="{{ url_for('static', filename='css/style.css') }}">
 
+    <style>
+
+        /* =========================
+           WHATSAPP BUTTON
+           ========================= */
+
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 22px;
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            margin-top: 15px;
+            transition: 0.3s;
+        }
+
+        .whatsapp-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+    </style>
+
 </head>
 
 
@@ -227,6 +255,9 @@
 
         <div class="success-buttons">
 
+
+            <!-- ORDER MORE -->
+
             <a
                 href="/products"
                 class="btn">
@@ -238,6 +269,9 @@
             </a>
 
 
+
+            <!-- BACK HOME -->
+
             <a
                 href="/"
                 class="btn-outline">
@@ -247,6 +281,23 @@
                 Back to Home
 
             </a>
+
+
+
+            <!-- WHATSAPP -->
+
+            <a
+                href="#"
+                id="whatsappOrderBtn"
+                class="whatsapp-btn"
+                target="_blank">
+
+                <i class="fa-brands fa-whatsapp"></i>
+
+                Send Order on WhatsApp
+
+            </a>
+
 
         </div>
 
@@ -282,6 +333,66 @@
     </div>
 
 </footer>
+
+
+
+<!-- ================= WHATSAPP SCRIPT ================= -->
+
+<script>
+
+    // Get order information from Flask
+
+    const order = {{ order | tojson }};
+
+
+    // Create WhatsApp message
+
+    let message = `NEW WHOLESALE ORDER
+====================
+
+Order No: #${order.order_id}
+
+Shop Name: ${order.shop_name}
+Location: ${order.location}
+Phone: ${order.phone}
+
+PRODUCTS
+====================`;
+
+
+    // Add every product
+
+    order.items.forEach((item, index) => {
+
+        message += `
+
+${index + 1}. ${item.product}
+Pack Size: ${item.size}
+Quantity: ${item.quantity} Kg`;
+
+    });
+
+
+    // Your Jaiwant Snacks WhatsApp number
+    // Country code +91, without + or spaces
+
+    const whatsappNumber = "916366287041";
+
+
+    // Create WhatsApp URL
+
+    const whatsappURL =
+        "https://wa.me/" +
+        whatsappNumber +
+        "?text=" +
+        encodeURIComponent(message);
+
+
+    // Connect URL to WhatsApp button
+
+    document.getElementById("whatsappOrderBtn").href = whatsappURL;
+
+</script>
 
 
 </body>
