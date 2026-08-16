@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cart | Jaiwant Foods</title>
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header>
+
+    <nav class="navbar">
+
+        <div class="logo">
+
+            <img
+                src="{{ url_for('static', filename='images/logo.png') }}"
+                alt="Jaiwant Foods Logo">
+
+            <h2>Jaiwant Foods</h2>
+
+        </div>
+
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="/">Home</a>
+            </li>
+
+            <li>
+                <a href="/products">Products</a>
+            </li>
+
+            <li>
+                <a href="/cart">
+                    Cart 🛒
+                </a>
+            </li>
+
+        </ul>
+
+
+        <a href="/products" class="order-btn">
+            Continue Shopping
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- ================= CART ================= -->
+
+<section class="cart-section">
+
+    <div class="container">
+
+        <h1 class="section-title">
+            Your Wholesale Cart
+        </h1>
+
+
+        {% if cart %}
+
+
+        <div class="cart-table-container">
+
+            <table class="cart-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Product
+                        </th>
+
+                        <th>
+                            Pack Size
+                        </th>
+
+                        <th>
+                            Quantity
+                        </th>
+
+                        <th>
+                            Action
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    {% for item in cart %}
+
+                    <tr>
+
+                        <td>
+                            {{ item.product }}
+                        </td>
+
+                        <td>
+                            {{ item.size }}
+                        </td>
+
+                        <td>
+                            {{ item.quantity }} Kg
+                        </td>
+
+                        <td>
+
+                            <a
+                                href="{{ url_for('remove_from_cart', index=loop.index0) }}"
+                                class="remove-btn"
+                                onclick="return confirm('Remove this product from your cart?');">
+
+                                <i class="fa-solid fa-trash"></i>
+
+                                Remove
+
+                            </a>
+
+                        </td>
+
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <!-- ================= CART SUMMARY ================= -->
+
+        <div class="cart-summary">
+
+            <h3>
+                Order Summary
+            </h3>
+
+
+            <p>
+
+                Total Products:
+
+                <strong>
+                    {{ cart|length }}
+                </strong>
+
+            </p>
+
+
+            <p>
+                Quantity is calculated in kilograms.
+            </p>
+
+
+            <div class="cart-buttons">
+
+                <a
+                    href="/products"
+                    class="btn-outline">
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                    Continue Shopping
+
+                </a>
+
+
+                <a
+                    href="/checkout"
+                    class="btn">
+
+                    Proceed to Checkout
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        {% else %}
+
+
+        <!-- ================= EMPTY CART ================= -->
+
+        <div class="empty-cart">
+
+            <i class="fa-solid fa-cart-shopping"></i>
+
+            <h2>
+                Your Cart is Empty
+            </h2>
+
+            <p>
+                Add some Jaiwant Foods products to your wholesale cart.
+            </p>
+
+
+            <a
+                href="/products"
+                class="btn">
+
+                View Products
+
+            </a>
+
+        </div>
+
+
+        {% endif %}
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="container">
+
+        <h3>
+            Jaiwant Foods
+        </h3>
+
+        <p>
+            Wholesale Chips & Namkeens Manufacturer
+        </p>
+
+        <p>
+            Serving customers across Karnataka.
+        </p>
+
+        <p>
+            © 2026 Jaiwant Foods. All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+</body>
+
+</html>

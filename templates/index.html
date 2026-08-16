@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaiwant Foods | Chips Manufacturer</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">
+               <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Jaiwant Foods Logo">
+                <h2>Jaiwant Foods</h2>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="/products">Products</a></li>
+                <li><a href="#order">Wholesale Order</a></li>
+                <li><a href="/cart">
+    <i class="fa-solid fa-cart-shopping"></i>
+    Cart
+</a></li>
+            </ul>
+
+            <a href="#order" class="order-btn">
+                Order Now
+            </a>
+
+        </nav>
+    </header>
+
+    <!-- ================= HERO SECTION ================= -->
+
+    <section class="hero">
+
+        <div class="hero-text">
+
+            <h1>
+                Premium Chips Manufacturer
+            </h1>
+
+            <p>
+                Freshly prepared traditional chips supplied to wholesalers,
+                supermarkets, distributors and retail stores across India.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#products" class="btn">
+                    View Products
+                </a>
+
+                <a href="#order" class="btn-outline">
+                    Place Wholesale Order
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="hero-image">
+            <img src="{{ url_for('static', filename='images/banner.png') }}" alt="Chips Banner">
+        </div>
+
+    </section>
+
+        <!-- ================= ABOUT SECTION ================= -->
+
+    <section class="about" id="about">
+
+        <div class="container">
+
+            <h2 class="section-title">About Jaiwant Foods</h2>
+
+            <p class="section-description">
+                Jaiwant Foods is a trusted wholesale manufacturer of fresh and crispy chips.
+                We supply premium quality chips to supermarkets, grocery stores,
+                distributors and wholesale dealers. Our products are prepared using
+                high-quality ingredients while maintaining hygiene and traditional taste.
+            </p>
+
+            <div class="about-container">
+
+                <div class="about-image">
+                    <img src="{{ url_for('static', filename='images/about.jpg') }}" alt="About Jaiwant Foods">
+                </div>
+
+                <div class="about-content">
+
+                    <h3>Why Choose Us?</h3>
+
+                    <p>
+                        We focus on delivering fresh products with consistent quality,
+                        competitive wholesale pricing and timely delivery.
+                    </p>
+
+                    <div class="features">
+
+                        <div class="feature-box">
+                            <i class="fa-solid fa-award"></i>
+                            <h4>Premium Quality</h4>
+                            <p>Prepared using fresh ingredients.</p>
+                        </div>
+
+                        <div class="feature-box">
+                            <i class="fa-solid fa-truck-fast"></i>
+                            <h4>Fast Delivery</h4>
+                            <p>Quick wholesale delivery to your shop.</p>
+                        </div>
+
+                        <div class="feature-box">
+                            <i class="fa-solid fa-indian-rupee-sign"></i>
+                            <h4>Best Wholesale Price</h4>
+                            <p>Affordable prices for dealers.</p>
+                        </div>
+
+                        <div class="feature-box">
+                            <i class="fa-solid fa-handshake"></i>
+                            <h4>Trusted Partnership</h4>
+                            <p>Building long-term business relationships.</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- ================= PRODUCTS SECTION ================= -->
+
+<section class="products" id="products">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Our Products
+        </h2>
+
+        <p class="section-description">
+            We manufacture premium quality traditional chips and snacks using
+            fresh ingredients with authentic taste.
+        </p>
+
+        <div class="product-container">
+
+            <!-- Product 1 -->
+
+            <div class="product-card">
+
+                <img src="{{ url_for('static', filename='images/banana.jpg') }}" alt="Banana Chips">
+
+                <h3>Banana Chips</h3>
+
+                <p>Available in Salt & Spicy flavours.</p>
+
+                <ul>
+                    <li>180g - ₹40</li>
+                    <li>500g - ₹200</li>
+                </ul>
+
+                <a href="#order" class="product-btn">
+                    Order Now
+                </a>
+
+            </div>
+
+            <!-- Product 2 -->
+
+            <div class="product-card">
+
+                <img src="{{ url_for('static', filename='images/jackfruit.jpg') }}" alt="Jackfruit Chips">
+
+                <h3>Jackfruit Chips</h3>
+
+                <p>Traditional crispy jackfruit chips.</p>
+
+                <ul>
+                    <li>200g - ₹120</li>
+                    <li>500g - ₹300</li>
+                </ul>
+
+                <a href="#order" class="product-btn">
+                    Order Now
+                </a>
+
+            </div>
+
+            <!-- Product 3 -->
+
+            <div class="product-card">
+
+                <img src="{{ url_for('static', filename='images/potato.jpg') }}" alt="Potato Chips">
+
+                <h3>Potato Chips</h3>
+
+                <p>Salt & Spicy flavours available.</p>
+
+                <ul>
+                    <li>90g - ₹40</li>
+                    <li>180g - ₹80</li>
+                    <li>500g - ₹200</li>
+                </ul>
+
+                <a href="#order" class="product-btn">
+                    Order Now
+                </a>
+
+            </div>
+
+            <!-- Product 4 -->
+
+            <div class="product-card">
+
+                <img src="{{ url_for('static', filename='images/mixture.jpg') }}" alt="Mixture">
+
+                <h3>Mixture</h3>
+
+                <p>Crunchy and tasty traditional mixture.</p>
+
+                <ul>
+                    <li>180g - ₹50</li>
+                    <li>500g - ₹130</li>
+                </ul>
+
+                <a href="#order" class="product-btn">
+                    Order Now
+                </a>
+
+            </div>
+
+            <!-- Product 5 -->
+
+            <div class="product-card">
+
+                <img src="{{ url_for('static', filename='images/greenpeas.jpg') }}" alt="Green Peas">
+
+                <h3>Green Peas</h3>
+
+                <p>Fresh crispy green peas snack.</p>
+
+                <ul>
+                    <li>180g - ₹40</li>
+                </ul>
+
+                <a href="#order" class="product-btn">
+                    Order Now
+                </a>
+
+            </div>
+
+            <!-- Product 6 -->
+
+            <div class="product-card">
+
+                <img src="{{ url_for('static', filename='images/shenga.jpg') }}" alt="Shenga">
+
+                <h3>Shenga</h3>
+
+                <p>Roasted crispy peanuts.</p>
+
+                <ul>
+                    <li>180g - ₹50</li>
+                </ul>
+
+                <a href="#order" class="product-btn">
+                    Order Now
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+ 
+<!-- ================= CONTACT SECTION ================= -->
+
+<section class="contact" id="contact">
+
+    <div class="container">
+
+        <h2 class="section-title">Contact Us</h2>
+
+        <p class="section-description">
+            We'd love to hear from you. Contact us for wholesale orders,
+            dealership enquiries, or any product-related questions.
+        </p>
+
+        <div class="contact-container">
+
+            <div class="contact-box">
+
+                <h3>Jaiwant Foods</h3>
+
+                <p>
+                    <strong>📍 Address:</strong><br>
+                    Sirsi, Karnataka
+                </p>
+
+                <p>
+                    <strong>📞 Mobile:</strong><br>
+                    +91 XXXXXXXXXX
+                </p>
+
+                <p>
+                    <strong>💬 WhatsApp:</strong><br>
+                    +91 XXXXXXXXXX
+                </p>
+
+                <p>
+                    <strong>📧 Email:</strong><br>
+                    jaiwantfoods@gmail.com
+                </p>
+
+                <p>
+                    <strong>🕒 Working Hours:</strong><br>
+                    Monday - Saturday<br>
+                    9:00 AM - 7:00 PM
+                </p>
+
+            </div>
+
+            <div class="map-box">
+
+                <iframe
+                    src="https://www.google.com/maps?q=Sirsi,Karnataka&output=embed"
+                    width="100%"
+                    height="350"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy">
+                </iframe>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-content">
+
+        <h2>Jaiwant Foods</h2>
+
+        <p>
+            Fresh • Crispy • Trusted Wholesale Supplier
+        </p>
+
+        <p>
+            Supplying quality chips across Karnataka.
+        </p>
+
+        <hr>
+
+        <p>
+
+            © 2026 Jaiwant Foods.
+
+            All Rights Reserved.
+
+        </p>
+
+    </div>
+
+</footer>
+
+</body>
+
+</html>

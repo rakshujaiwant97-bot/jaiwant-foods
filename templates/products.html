@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Products | Jaiwant Foods</title>
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header>
+
+    <nav class="navbar">
+
+        <div class="logo">
+
+            <img
+                src="{{ url_for('static', filename='images/logo.png') }}"
+                alt="Jaiwant Foods Logo">
+
+            <h2>Jaiwant Foods</h2>
+
+        </div>
+
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="/">Home</a>
+            </li>
+
+            <li>
+                <a href="/#about">About</a>
+            </li>
+
+            <li>
+                <a href="/products">Products</a>
+            </li>
+
+            <li>
+                <a href="/cart">
+                    Cart 🛒
+                </a>
+            </li>
+
+            <li>
+                <a href="/#contact">Contact</a>
+            </li>
+
+        </ul>
+
+
+        <a href="/cart" class="order-btn">
+
+            View Cart
+
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- ================= PRODUCTS HEADER ================= -->
+
+<section class="products-header">
+
+    <div class="container">
+
+        <h1>
+            Our Wholesale Products
+        </h1>
+
+        <p>
+            Select your preferred pack size and enter the quantity
+            required in kilograms.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= PRODUCTS ================= -->
+
+<section class="products-section">
+
+    <div class="container">
+
+        <div class="products-grid">
+
+
+
+            <!-- ================= BANANA CHIPS ================= -->
+
+            <div class="product-card">
+
+                <img
+                    src="{{ url_for('static', filename='images/banana.jpg') }}"
+                    alt="Banana Chips">
+
+
+                <div class="product-content">
+
+                    <h3>
+                        Banana Chips
+                    </h3>
+
+                    <p>
+                        Crispy and freshly prepared banana chips.
+                    </p>
+
+
+                    <form
+                        action="/add_to_cart"
+                        method="POST">
+
+
+                        <input
+                            type="hidden"
+                            name="product"
+                            value="Banana Chips">
+
+
+                        <label>
+                            Pack Size
+                        </label>
+
+
+                        <select name="size">
+
+                            <option value="180 g">
+                                180 g
+                            </option>
+
+                            <option value="500 g">
+                                500 g
+                            </option>
+
+                            <option value="1 Kg">
+                                1 Kg
+                            </option>
+
+                        </select>
+
+
+                        <label>
+                            Quantity (Kg)
+                        </label>
+
+
+                        <input
+                            type="number"
+                            name="quantity"
+                            value="1"
+                            min="1"
+                            step="1"
+                            required>
+
+
+                        <button
+                            type="submit"
+                            class="product-btn">
+
+                            <i class="fa-solid fa-cart-plus"></i>
+
+                            Add to Cart
+
+                        </button>
+
+
+                    </form>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================= JACKFRUIT CHIPS ================= -->
+
+            <div class="product-card">
+
+                <img
+                    src="{{ url_for('static', filename='images/jackfruit.jpg') }}"
+                    alt="Jackfruit Chips">
+
+
+                <div class="product-content">
+
+                    <h3>
+                        Jackfruit Chips
+                    </h3>
+
+                    <p>
+                        Traditional crispy jackfruit chips.
+                    </p>
+
+
+                    <form
+                        action="/add_to_cart"
+                        method="POST">
+
+
+                        <input
+                            type="hidden"
+                            name="product"
+                            value="Jackfruit Chips">
+
+
+                        <label>
+                            Pack Size
+                        </label>
+
+
+                        <select name="size">
+
+                            <option value="180 g">
+                                180 g
+                            </option>
+
+                            <option value="500 g">
+                                500 g
+                            </option>
+
+                            <option value="1 Kg">
+                                1 Kg
+                            </option>
+
+                        </select>
+
+
+                        <label>
+                            Quantity (Kg)
+                        </label>
+
+
+                        <input
+                            type="number"
+                            name="quantity"
+                            value="1"
+                            min="1"
+                            step="1"
+                            required>
+
+
+                        <button
+                            type="submit"
+                            class="product-btn">
+
+                            <i class="fa-solid fa-cart-plus"></i>
+
+                            Add to Cart
+
+                        </button>
+
+
+                    </form>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================= POTATO CHIPS ================= -->
+
+            <div class="product-card">
+
+                <img
+                    src="{{ url_for('static', filename='images/potato.jpg') }}"
+                    alt="Potato Chips">
+
+
+                <div class="product-content">
+
+                    <h3>
+                        Potato Chips
+                    </h3>
+
+                    <p>
+                        Golden, crispy and crunchy potato chips.
+                    </p>
+
+
+                    <form
+                        action="/add_to_cart"
+                        method="POST">
+
+
+                        <input
+                            type="hidden"
+                            name="product"
+                            value="Potato Chips">
+
+
+                        <label>
+                            Pack Size
+                        </label>
+
+
+                        <select name="size">
+
+                            <option value="180 g">
+                                180 g
+                            </option>
+
+                            <option value="500 g">
+                                500 g
+                            </option>
+
+                            <option value="1 Kg">
+                                1 Kg
+                            </option>
+
+                        </select>
+
+
+                        <label>
+                            Quantity (Kg)
+                        </label>
+
+
+                        <input
+                            type="number"
+                            name="quantity"
+                            value="1"
+                            min="1"
+                            step="1"
+                            required>
+
+
+                        <button
+                            type="submit"
+                            class="product-btn">
+
+                            <i class="fa-solid fa-cart-plus"></i>
+
+                            Add to Cart
+
+                        </button>
+
+
+                    </form>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================= MIXTURE ================= -->
+
+            <div class="product-card">
+
+                <img
+                    src="{{ url_for('static', filename='images/mixture.jpg') }}"
+                    alt="Mixture">
+
+
+                <div class="product-content">
+
+                    <h3>
+                        Mixture
+                    </h3>
+
+                    <p>
+                        Crunchy and delicious traditional mixture.
+                    </p>
+
+
+                    <form
+                        action="/add_to_cart"
+                        method="POST">
+
+
+                        <input
+                            type="hidden"
+                            name="product"
+                            value="Mixture">
+
+
+                        <label>
+                            Pack Size
+                        </label>
+
+
+                        <select name="size">
+
+                            <option value="180 g">
+                                180 g
+                            </option>
+
+                            <option value="500 g">
+                                500 g
+                            </option>
+
+                            <option value="1 Kg">
+                                1 Kg
+                            </option>
+
+                        </select>
+
+
+                        <label>
+                            Quantity (Kg)
+                        </label>
+
+
+                        <input
+                            type="number"
+                            name="quantity"
+                            value="1"
+                            min="1"
+                            step="1"
+                            required>
+
+
+                        <button
+                            type="submit"
+                            class="product-btn">
+
+                            <i class="fa-solid fa-cart-plus"></i>
+
+                            Add to Cart
+
+                        </button>
+
+
+                    </form>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================= GREEN PEAS ================= -->
+
+            <div class="product-card">
+
+                <img
+                    src="{{ url_for('static', filename='images/greenpeas.jpg') }}"
+                    alt="Green Peas">
+
+
+                <div class="product-content">
+
+                    <h3>
+                        Green Peas
+                    </h3>
+
+                    <p>
+                        Crispy and tasty roasted green peas.
+                    </p>
+
+
+                    <form
+                        action="/add_to_cart"
+                        method="POST">
+
+
+                        <input
+                            type="hidden"
+                            name="product"
+                            value="Green Peas">
+
+
+                        <label>
+                            Pack Size
+                        </label>
+
+
+                        <select name="size">
+
+                            <option value="180 g">
+                                180 g
+                            </option>
+
+                            <option value="500 g">
+                                500 g
+                            </option>
+
+                            <option value="1 Kg">
+                                1 Kg
+                            </option>
+
+                        </select>
+
+
+                        <label>
+                            Quantity (Kg)
+                        </label>
+
+
+                        <input
+                            type="number"
+                            name="quantity"
+                            value="1"
+                            min="1"
+                            step="1"
+                            required>
+
+
+                        <button
+                            type="submit"
+                            class="product-btn">
+
+                            <i class="fa-solid fa-cart-plus"></i>
+
+                            Add to Cart
+
+                        </button>
+
+
+                    </form>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================= SHENGA ================= -->
+
+            <div class="product-card">
+
+                <img
+                    src="{{ url_for('static', filename='images/shenga.jpg') }}"
+                    alt="Shenga">
+
+
+                <div class="product-content">
+
+                    <h3>
+                        Shenga
+                    </h3>
+
+                    <p>
+                        Crunchy and freshly prepared shenga.
+                    </p>
+
+
+                    <form
+                        action="/add_to_cart"
+                        method="POST">
+
+
+                        <input
+                            type="hidden"
+                            name="product"
+                            value="Shenga">
+
+
+                        <label>
+                            Pack Size
+                        </label>
+
+
+                        <select name="size">
+
+                            <option value="180 g">
+                                180 g
+                            </option>
+
+                            <option value="500 g">
+                                500 g
+                            </option>
+
+                            <option value="1 Kg">
+                                1 Kg
+                            </option>
+
+                        </select>
+
+
+                        <label>
+                            Quantity (Kg)
+                        </label>
+
+
+                        <input
+                            type="number"
+                            name="quantity"
+                            value="1"
+                            min="1"
+                            step="1"
+                            required>
+
+
+                        <button
+                            type="submit"
+                            class="product-btn">
+
+                            <i class="fa-solid fa-cart-plus"></i>
+
+                            Add to Cart
+
+                        </button>
+
+
+                    </form>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="container">
+
+        <h3>
+            Jaiwant Foods
+        </h3>
+
+        <p>
+            Wholesale Chips & Namkeens Manufacturer
+        </p>
+
+        <p>
+            Serving customers across Karnataka.
+        </p>
+
+        <p>
+            © 2026 Jaiwant Foods. All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+</body>
+
+</html>
