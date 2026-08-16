@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, render_template, request, redirect, url_for, session, jsonify
+import os
 from database import get_db_connection
 
 app = Flask(__name__)
@@ -205,7 +206,37 @@ PRODUCTS
         "order_success.html",
         order=order_details
     )
+# =========================
+# WHATSAPP WEBHOOK
+# =========================
 
+@app.route("/webhook", methods=["GET"])
+def verify_webhook():
+
+    verify_token = os.environ.get(
+        "WHATSAPP_VERIFY_TOKEN",
+        "jaiwant_webhook_verify"
+    )
+
+    mode = request.args.get("hub.mode")
+    token = request.args.get("hub.verify_token")
+    challenge = request.args.get("hub.challenge")
+
+    if mode == "subscribe" and token == verify_token:
+        return challenge, 200
+
+    return "Verification failed", 403
+
+
+@app.route("/webhook", methods=["POST"])
+def receive_webhook():
+
+    data = request.get_json()
+
+    print("WhatsApp Webhook received:")
+    print(data)
+
+    return jsonify({"status": "received"}), 200
 
 # =========================
 # RUN APPLICATION
